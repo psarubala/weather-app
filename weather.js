@@ -5,11 +5,8 @@ let themeBtn = document.querySelector("#themeToggle");
 
 const apiKey = "d7054934c28c1b28aafa222a25598092";
 
- 
-
 // Load last searched city
 window.onload = () => {
-  input="";
   let lastCity = localStorage.getItem("lastCity");
   if (lastCity) input.value = lastCity;
 };
@@ -20,7 +17,6 @@ input.addEventListener("keydown", (e) => {
     btn.click();
   }
 });
-
 
 /* Theme toggle */
 themeBtn.addEventListener("click", () => {
@@ -42,12 +38,6 @@ btn.addEventListener("click", async () => {
   }
 
   output.innerHTML = "<h3>⏳ Loading...</h3>";
-//    /* 5 day forecast */
-//     let forecastRes = await fetch(
-//       `https://api.openweathermap.org/data/2.5/forecast?q=${input.value}&appid=${apiKey}`
-//     );
-//     let forecastData = await forecastRes.json();
-//     console.log(forecastData)
 
   try {
     let res = await fetch(
@@ -61,7 +51,11 @@ btn.addEventListener("click", async () => {
       return;
     }
 
+    // Save last city
     localStorage.setItem("lastCity", cityName);
+
+    // ✅ CLEAR INPUT AFTER SEARCH
+    input.value = "";
 
     output.innerHTML = "";
 
