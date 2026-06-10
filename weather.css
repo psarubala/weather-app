@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.outer {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.inner {
+    display: flex;
+    gap: 10px;
+}
+
+.inner input {
+    padding: 10px 14px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+}
+
+.inner input:focus {
+    border-color: #4facfe;
+}
+
+.inner button {
+    padding: 10px 18px;
+    font-size: 16px;
+    background: #4facfe;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.inner button:hover {
+    background: #2e8bfa;
+}
+
+#output {
+  margin: 35px auto;
+  width: 340px;
+  padding: 22px;
+
+  background: linear-gradient(135deg, #1f2933, #111827);
+  border-radius: 16px;
+
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
+
+  font-family: 'Segoe UI', sans-serif;
+  color: #ffffff;
+  text-align: left;
+
+  animation: slideUp 0.4s ease-out;
+}
+
+/* All h3 base style */
+#output h3 {
+  margin: 10px 0;
+  padding: 10px 12px;
+
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+
+  letter-spacing: 0.5px;
+}
+
+/* City */
+#output h3:nth-child(1) {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  text-transform: uppercase;
+}
+
+/* Temperature */
+#output h3:nth-child(2) {
+  background: linear-gradient(135deg, #f97316, #fb923c);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* Weather */
+#output h3:nth-child(3) {
+  background: linear-gradient(135deg, #22c55e, #4ade80);
+}
+
+/* Wind */
+#output h3:nth-child(4) {
+  background: linear-gradient(135deg, #06b6d4, #67e8f9);
+  color: #003344;
+}
+#themeToggle {
+  margin-bottom: 20px;
+  padding: 8px 18px;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+/* Light mode */
+body.light {
+  background: linear-gradient(135deg, #e0f2fe, #f8fafc);
+}
+
+body.light #output {
+  background: linear-gradient(135deg, #ffffff, #e5e7eb);
+  color: #000;
+}
+
+body.light #output h3 {
+  color: #000;
+}
+
+/* Animation */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
