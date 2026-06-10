@@ -9,6 +9,7 @@ const apiKey = "d7054934c28c1b28aafa222a25598092";
 
 // Load last searched city
 window.onload = () => {
+  input="";
   let lastCity = localStorage.getItem("lastCity");
   if (lastCity) input.value = lastCity;
 };
